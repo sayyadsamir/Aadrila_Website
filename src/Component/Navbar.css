@@ -1,0 +1,161 @@
+.nv-navbar {
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+}
+
+.nv-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 14px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nv-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nv-logo-img {
+  width: 140px;
+  height: 40px;
+}
+
+/* Menu */
+.nv-menu {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+
+.nv-item {
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  cursor: pointer;
+  line-height: 18px;
+  position: relative;
+}
+
+.nv-active {
+  color: #2f6fdf;
+}
+
+.nv-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  border-radius: 2px;
+}
+
+/* Button */
+.nv-btn {
+  background: #3b6fc1;
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 22px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.nv-btn:hover {
+  background: #2f5fb0;
+}
+
+.nv-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.mobile-btn {
+  display: none;
+}
+
+.nv-item {
+  text-decoration: none;
+  color: #333;
+}
+
+.nv-item:hover {
+  color: #2f6fdf;
+}
+
+/* Table View  */
+
+@media (max-width: 992px) {
+  .mobile-btn {
+    display: block;
+  }
+}
+
+@media (max-width: 992px) {
+
+  .nv-container {
+    padding: 14px 20px;
+    position: relative;
+  }
+
+  /* show hamburger */
+  .nv-toggle {
+    display: block;
+  }
+
+  /* hide desktop button */
+  .desktop-btn {
+    display: none;
+  }
+
+  /* dropdown menu */
+  .nv-menu {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+
+    background: #ffffff;
+    flex-direction: column;
+    gap: 22px;
+
+    padding: 24px 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+    display: none;
+    z-index: 999;
+  }
+
+  .nv-menu.open {
+    display: flex;
+  }
+
+  .nv-item {
+    font-size: 16px;
+  }
+
+  .mobile-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+/* Mobile view  */
+
+@media (max-width: 576px) {
+
+  .nv-logo-img {
+    width: 120px;
+    height: auto;
+  }
+
+  .nv-item {
+    font-size: 15px;
+  }
+}
